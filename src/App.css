@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -40,9 +40,24 @@
   justify-content: center;
 }
 
-.App-article image {
-  width: 20vmax;
-  height: 20vmax;
+.App-article img {
+  max-width: 10rem;
+}
+
+.App-message{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: small;
+  line-height: 20px;
+  background-color: darkgreen;
+  color: #eee;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  opacity: 75%;
+}
+.App-message.warn{
+  background-color: red;
 }
 
 @keyframes App-logo-spin {
