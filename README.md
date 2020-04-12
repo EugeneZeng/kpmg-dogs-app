@@ -2,20 +2,18 @@
 Webapp to display images for dog breeds.
 
 ## Before everything
-- Get into the project folder
-- Install packages
-```bash
-yarn
-```
+- Start up project [dpmg-dogs-api](https://github.com/EugeneZeng/kpmg-dogs-api) according to its README.
+- Download and get into this project folder: `cd kpmg-dogs-app`.
+- Install dependencies: `yarn`.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory with all the dependencies installed, you'll be able to run:
 
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
