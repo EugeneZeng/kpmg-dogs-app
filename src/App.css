@@ -24,9 +24,10 @@
 }
 
 .App-header select{
-  width: 15vmin;
+  width: 20vmin;
   padding: 2rem;
   margin: 2rem;
+  font-size: medium;
 }
 
 .App-link {
@@ -38,10 +39,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .App-article img {
-  max-width: 10rem;
+  max-width: 50%;
 }
 
 .App-message{

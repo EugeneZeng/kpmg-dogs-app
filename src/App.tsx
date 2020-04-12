@@ -50,6 +50,9 @@ function App() {
   useEffect(() => {
     if (breedMap[selectedBreed]) {
       setSubBreeds(breedMap[selectedBreed]);
+    } else {
+      setSelectedSubBreed('');
+      setSubBreeds([]);
     }
     getBreedImages(selectedBreed);
   }, [selectedBreed]);
@@ -91,10 +94,10 @@ function App() {
           subBreeds.length ? (<Selector onChange={onSubBreedChange} list={subBreeds}></Selector>) : null
         }
       </header>
-      <article className="APP-article">
+      <article className="App-article">
         {
           images.length ?
-            images.map((image, i) => (<img key={i} alt={[setSelectedBreed, selectedSubBreed].join('-')} src={image} />))
+            images.map((image, i) => (<img key={i} alt={`${selectedBreed}-${selectedSubBreed}-${i}`} src={image} />))
             : (<span>{isImagesLoading ? 'Image loading...' : 'No images here!'}</span>)
         }
         {
