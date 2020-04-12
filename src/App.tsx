@@ -3,6 +3,7 @@ import Selector from './Selector';
 import { getBreeds, getImages } from './api';
 import './App.css';
 import logo from './logo.svg';
+let times = 2;
 
 interface BreedMap {
   [Prop: string]: string[]
@@ -14,7 +15,7 @@ interface Dog {
 let breedMap: BreedMap = {};
 
 function App() {
-  const [errorMsg, setErrorMsg] = useState<string>();
+  const [errorMsg, setErrorMsg] = useState<string>('error happpenss');
   const [isImagesLoading, setIsImagesLoading] = useState<boolean>(false);
   const [breeds, setBreeds] = useState<string[]>([]);
   const [subBreeds, setSubBreeds] = useState<string[]>([]);
@@ -22,7 +23,7 @@ function App() {
   const [selectedBreed, setSelectedBreed] = useState<string>('');
   const [selectedSubBreed, setSelectedSubBreed] = useState<string>('');
 
-  if (breeds.length === 0) {
+  if (breeds.length === 0 && !times) {
     getBreeds().then(res => {
       const dogList: Dog[] = res.data;
       breedMap = {};
@@ -33,9 +34,10 @@ function App() {
         }
       });
       setBreeds(Object.keys(breedMap));
+      times--;
     }).catch(e => {
       console.error(e);
-      setErrorMsg(e);
+      setErrorMsg('Can not get breeds.');
     });
   }
 
@@ -43,7 +45,7 @@ function App() {
     if(errorMsg !== ''){
       setTimeout(function(){
         setErrorMsg('');
-      }, 500)
+      }, 2000)
     }
   }, [errorMsg])
 
@@ -78,7 +80,7 @@ function App() {
       setIsImagesLoading(false);
     }).catch(e => {
       console.error(e);
-      setErrorMsg(e);
+      setErrorMsg('Can not get breed images.');
     })
   }
 
