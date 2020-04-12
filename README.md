@@ -1,6 +1,13 @@
 # kpmg-dogs-app
 Webapp to display images for dog breeds.
 
+## Before everything
+- Get into the project folder
+- Install packages
+```bash
+yarn
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
