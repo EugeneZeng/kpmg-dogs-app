@@ -24,7 +24,7 @@
 }
 
 .App-header select{
-  width: 20vmin;
+  min-width: 20vmin;
   padding: 2rem;
   margin: 2rem;
   font-size: medium;
