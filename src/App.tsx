@@ -15,7 +15,7 @@ interface Dog {
 let breedMap: BreedMap = {};
 
 function App() {
-  const [errorMsg, setErrorMsg] = useState<string>('error happpenss');
+  const [errorMsg, setErrorMsg] = useState<string>('');
   const [isImagesLoading, setIsImagesLoading] = useState<boolean>(false);
   const [breeds, setBreeds] = useState<string[]>([]);
   const [subBreeds, setSubBreeds] = useState<string[]>([]);
@@ -23,7 +23,7 @@ function App() {
   const [selectedBreed, setSelectedBreed] = useState<string>('');
   const [selectedSubBreed, setSelectedSubBreed] = useState<string>('');
 
-  if (breeds.length === 0 && !times) {
+  if (breeds.length === 0 && times) {
     getBreeds().then(res => {
       const dogList: Dog[] = res.data;
       breedMap = {};
@@ -34,11 +34,11 @@ function App() {
         }
       });
       setBreeds(Object.keys(breedMap));
-      times--;
     }).catch(e => {
       console.error(e);
       setErrorMsg('Can not get breeds.');
     });
+    times--;
   }
 
   useEffect(() => {
